@@ -2,6 +2,7 @@
 
 const gameBoard = (() => {
     const gameBoardContainer = document.querySelector("#game-board");
+    gameBoardContainer.style.visibility = 'hidden';
     let boardArray = [null, null, null, null, null, null,null, null, null];
     let currentPlayer = 'playerX';
     let bot;
@@ -71,25 +72,14 @@ const gameBoard = (() => {
  
     //A function to create a board of buttons to play a game
     const createSquares = () => {
+        gameBoardContainer.style.visibility = 'visible';
         boardArray.forEach((element, index) => {
             const square = document.createElement('button');
             square.classList.add('board-square');
             square.setAttribute('id', `${index}`);
             gameBoardContainer.appendChild(square);
             square.addEventListener('click', handleEvent);
-            fillInSquare(element, square);
         })
-    };
-
-    //a function to fill in the buttons on a game board
-    const fillInSquare = (element, square) => {
-        if (element === null) {
-            square.textContent = ('-');
-        } else if (element === 'X') {
-            square.textContent = ('X');
-        } else if (element === 'O') {
-            square.textContent = ('O');
-        };
     };
     
     //a function to toggle players marker in a players game type
@@ -109,24 +99,36 @@ const gameBoard = (() => {
         if (gameType === 'bot') {
             if (player.marker === 'X' && boardArray[indexValue] === null) {
                 boardArray[indexValue] = 'X';
-                button.textContent = ('X');
+                const crossIcon = document.createElement('img');
+                crossIcon.setAttribute('src', 'icons/close.svg');
+                crossIcon.classList.add('marker-icon');
+                button.appendChild(crossIcon);
                 checkWinner();
                 computerTurn();
             } else if (player.marker === 'O' && boardArray[indexValue] === null) {
                 boardArray[indexValue] = 'O';
-                button.textContent = ('O');
+                const crossIcon = document.createElement('img');
+                crossIcon.setAttribute('src', 'icons/circle-outline.svg');
+                crossIcon.classList.add('marker-icon');
+                button.appendChild(crossIcon);
                 checkWinner();
                 computerTurn();
             };
         } else if (gameType === 'players') {
             if (currentPlayer === "playerX" && boardArray[indexValue] === null) {
                 boardArray[indexValue] = 'X';
-                button.textContent = ('X');
+                const crossIcon = document.createElement('img');
+                crossIcon.setAttribute('src', 'icons/close.svg');
+                crossIcon.classList.add('marker-icon');
+                button.appendChild(crossIcon);
                 togglePlayer();
                 checkWinner();
             } else if (currentPlayer === "playerO" && boardArray[indexValue] === null) {
                 boardArray[indexValue] = 'O';
-                button.textContent = ('O');
+                const crossIcon = document.createElement('img');
+                crossIcon.setAttribute('src', 'icons/circle-outline.svg');
+                crossIcon.classList.add('marker-icon');
+                button.appendChild(crossIcon);
                 togglePlayer();
                 checkWinner();
             };
@@ -166,6 +168,7 @@ const gameBoard = (() => {
 
     //A function to delete the board and renew a board array
     const clearBoard = () => {
+        gameBoardContainer.style.visibility = 'hidden';
         gameBoardContainer.replaceChildren();
         boardArray = [null, null, null, null, null, null,null, null, null];
     };
@@ -180,14 +183,19 @@ const gameBoard = (() => {
     const finalNumber = cells[randomNumber];
     const squareToFill = document.getElementById(`${finalNumber}`)
     if (bot.marker === 'X') {
-        squareToFill.textContent = ('X');
+        const crossIcon = document.createElement('img');
+                crossIcon.setAttribute('src', 'icons/close.svg');
+                crossIcon.classList.add('marker-icon');
+                squareToFill.appendChild(crossIcon);
         boardArray[finalNumber] = 'X';
     } else if (bot.marker === 'O') {
-        squareToFill.textContent = ('O');
+        const crossIcon = document.createElement('img');
+                crossIcon.setAttribute('src', 'icons/circle-outline.svg');
+                crossIcon.classList.add('marker-icon');
+                squareToFill.appendChild(crossIcon);
         boardArray[finalNumber] = 'O';
     };
     checkWinner();
-    console.log(boardArray);
     };
 
     //A function to clear the board and play a game again
@@ -208,8 +216,6 @@ const gameBoard = (() => {
                 const containerChild = children[i];
                 containerChild.setAttribute('disabled', false);
             }
-        
-        
     };
 
     return {

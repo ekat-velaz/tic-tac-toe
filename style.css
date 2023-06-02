@@ -1,5 +1,251 @@
+/* Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+/* Fonts and color variables */
+
+@font-face {
+    font-family: "Titillium-Web";
+    src: url(Titillium_Web/TitilliumWeb-Black.ttf);
+    src: url(Titillium_Web/TitilliumWeb-Bold.ttf);
+    src: url(Titillium_Web/TitilliumWeb-Regular.ttf);
+	src: url(Titillium_Web/TitilliumWeb-SemiBold.ttf);
+	src: url(Titillium_Web/TitilliumWeb-Light.ttf);
+};
+
+
+:root {
+    --blue: #A6D0DD;
+    --coral: #FF6969;
+    --peach: #FFD3B0;
+    --biege: #FFF9DE;
+    --shadow: 3px 3px 5px #A6D0DD;
+    font-family: "Titillium-Web";
+}
+
+* {
+	--blue: #A6D0DD;
+    --coral: #FF6969;
+    --peach: #FFD3B0;
+    --biege: #FFF9DE;
+    --shadow-coral: 10px 10px 15px #FF6969;
+	--shadow-biege: 10px 10px 15px #FFF9DE ;
+    font-family: "Titillium-Web";
+}
+
+body {
+	height: 100vh;
+	background-color: var(--biege);
+}
+
+#main {
+	height: 100%;
+    margin: 0 auto;
+	display: grid;
+	grid-template-rows: 1fr 5fr;
+	align-items: center;
+	gap: 50px;
+}
+
+#header-container {
+	height: 150px;
+ 	display: grid;
+ 	place-items: center;
+ 	background-color: var(--peach);
+	box-shadow: var(--shadow-coral);
+}
+
+#header-text {
+	font-size: 62px;
+	color: var(--coral);
+}
+
+#choose-container {
+	z-index: 9999;
+	background-color: var(--coral);
+	color: var(--biege);
+	border-radius: 10px;
+	box-shadow: var(--shadow-coral);
+	height: 250px;
+	width: 300px;
+	padding: 50px;
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+	display: grid;
+	place-items: center;
+}
+
+#choose-header {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.choose-btn {
+	width: 150px;
+	height: 50px;
+	background-color: var(--peach);
+	color: var(--coral);
+	font-size: 30px;
+	box-shadow: var(--shadow-biege);
+	border-radius: 10px;
+}
+
+#game-board-container {
+	display: grid;
+	place-items: center;
+}
+
 #game-board {
+	width:500px;
+	height: 500px;
+	box-shadow: var(--shadow-coral);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+	background-color: var(--blue);
+	border: 10px solid var(--coral);
+}
+
+.board-square {
+	border: 5px solid var(--coral);
+}
+
+.marker-icon {
+	height: 150px;
+	filter: invert(54%) sepia(68%) saturate(3047%) hue-rotate(324deg) brightness(110%) contrast(107%);
+}
+
+#marks-container {
+	z-index: 9999;
+	background-color: var(--coral);
+	color: var(--biege);
+	border-radius: 10px;
+	box-shadow: var(--shadow-coral);
+	height: 250px;
+	width: 300px;
+	padding: 50px;
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+	display: grid;
+	place-items: center;
+}
+
+#marks-text {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+#marks-btn-container {
+ 	display: grid;
+ 	gap: 80px;
+	grid-auto-flow: column;
+}
+
+.mark-btn {
+	width: 100px;
+	height: 100px;
+	background-color: var(--peach);
+	color: var(--coral);
+	font-size: 52px;
+	box-shadow: var(--shadow-biege);
+	border-radius: 10px;
+}
+
+#winner-container {
+	z-index: 9999;
+	background-color: var(--coral);
+	color: var(--biege);
+	border-radius: 10px;
+	box-shadow: var(--shadow-coral);
+	height: 250px;
+	width: 300px;
+	padding: 50px;
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+	display: grid;
+	place-items: center;
+}
+
+#winner-reveal {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+#reset-btn {
+	width: 300px;
+	height: 50px;
+	background-color: var(--peach);
+	color: var(--coral);
+	font-size: 50px;
+	box-shadow: var(--shadow-biege);
+	border-radius: 10px;
 }
