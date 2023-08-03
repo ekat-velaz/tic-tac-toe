@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Tic Tac Toe</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="main">
-        <div id="header-container">
-            <div id="header-text">Tic-Tac-Toe</div>
+      <div id="header-container">
+        <div id="header-text"><span>X</span> Tic-Tac-Toe <span>O</span></div>
+      </div>
+      <div id="choose-container">
+        <div id="choose-header">Choose your enemy</div>
+        <button id="choose-player" class="choose-btn">Player</button>
+        <button id="choose-bot" class="choose-btn">Bot</button>
+      </div>
+
+      <div id="marks-container">
+        <div id="marks-text">Choose your mark</div>
+        <div id="marks-btn-container">
+          <button id="mark-X" class="mark-btn">X</button>
+          <button id="mark-O" class="mark-btn">O</button>
         </div>
-        <div id="choose-container">
-            <div id="choose-header">Choose your enemy</div>
-            <button id="choose-player" class="choose-btn">Player</button>
-            <button id="choose-bot" class="choose-btn">Bot</button>
-        </div>
-        
-        <div id="marks-container">
-            <div id="marks-text">Choose your mark</div>
-            <div id="marks-btn-container">
-                <button id="mark-X" class="mark-btn">X</button>
-                <button id="mark-O" class="mark-btn">O</button>
-            </div>
-        </div>
-        <div id="winner-container">
-            <div id="winner-reveal"></div>
-            <button id='reset-btn'>Play again?</button>
-        </div>
-        <div id="game-board-container">
-            <div id="game-board"></div>
-        </div>
-        
+      </div>
+      <div id="winner-container">
+        <div id="winner-reveal"></div>
+        <button id="reset-btn">Play again?</button>
+      </div>
+      <div id="game-board-container">
+        <div id="game-board"></div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
