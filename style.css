@@ -144,11 +144,11 @@ button {
 
 @font-face {
   font-family: "Titillium-Web";
-  src: url(/Titillium_Web/TitilliumWeb-Black.ttf);
-  src: url(/Titillium_Web/TitilliumWeb-Bold.ttf);
-  src: url(/Titillium_Web/TitilliumWeb-Regular.ttf);
-  src: url(/Titillium_Web/TitilliumWeb-SemiBold.ttf);
-  src: url(/Titillium_Web/TitilliumWeb-Light.ttf);
+  src: url(https://ekat-velaz.github.io/tic-tac-toe/Titillium_Web/TitilliumWeb-Black.ttf);
+  src: url(https://ekat-velaz.github.io/tic-tac-toe/Titillium_Web/TitilliumWeb-Bold.ttf);
+  src: url(https://ekat-velaz.github.io/tic-tac-toe/Titillium_Web/TitilliumWeb-Regular.ttf);
+  src: url(https://ekat-velaz.github.io/tic-tac-toe/Titillium_Web/TitilliumWeb-SemiBold.ttf);
+  src: url(https://ekat-velaz.github.io/tic-tac-toe/Titillium_Web/TitilliumWeb-Light.ttf);
 }
 
 :root {
